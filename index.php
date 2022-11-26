@@ -16,7 +16,7 @@ date_default_timezone_set("Asia/Jakarta");
 <body>
     <div class="container m-3">
         <h2>Data Sekolah</h2>
-        <a class="btn btn-primary" href="/uts/add.php" role="button">Tambah </a>
+        <a class="btn btn-primary" href="/uts/add.php" role="button">Tambah Sekolah</a>
         <br>
         <table class="table table-striped table-hover">
             <thead>
@@ -38,45 +38,15 @@ date_default_timezone_set("Asia/Jakarta");
                     <th>Kabupaten/Kota</th>
                     <th>Provinsi</th>
                     <th>Kode Pos</th>
+                    <th colspan="2">Action</th>
                 </tr>    
             </thead>
             <tbody>
-            <tbody>
-    <td>69786287</td>
-    <td>Negeri</td>
-    <td>Smk</td>
-    <td>Smk negeri 10 merangin</td>
-    <td>1156/PD/2013</td>
-    <td>2013-10-16</td>
-    <td>1156/PD/2013</td>
-    <td>2013-10-16</td>
-    <td>jl.lintas Sumatra kab.merangin,kec.pamenang,jambi 37357</td>
-    <td>010</td>
-    <td>005</td>
-    <td>II</td>
-    <td>Sialang</td>
-    <td>Pamenang</td>
-    <td>Merangin</td>
-    <td>Jambi</td>
-    <td>3757
-    <td>
-    <div>
-        <div class='row'>
-            <div class='col d-flex justify-content-center>
-            <a href=''class='btn btn-warning'> Update </a><a><a>
-        <div>
-        <div class ='col d-flex justify-content-center'>
-            <a href=''class='btn btn-sm btn-danger'> Delete </a>
-    <tbody>
-</table>
-</div>
-</body>
-</html>
-<?php
+            <?php
             $server   = "localhost";
             $user     = "root";
             $password = "";
-            $db       = "db_sekolah";
+            $db       = "db_cucu";
 
             //koneksi
             $connect  = new mysqli($server, $user, $password, $db);
@@ -88,7 +58,8 @@ date_default_timezone_set("Asia/Jakarta");
 
             //menampilkan data dari database
         
-            $sql    = "SELECT * FROM data_sekolah";
+            $sql    = "SELECT * FROM db_cucu";
+            $result = $connect->query($sql);
 
             if(!$result){
                 die("Invalid Query: ". $connect->error);
@@ -111,7 +82,7 @@ date_default_timezone_set("Asia/Jakarta");
                     <td>$row[dusun]</td>
                     <td>$row[desa]</td>
                     <td>$row[kecamatan]</td>
-                    <td>$row[kabupaten_kota]</td>
+                    <td>$row[kabupaten]</td>
                     <td>$row[provinsi]</td>
                     <td>$row[kode_pos]</td>
                 
