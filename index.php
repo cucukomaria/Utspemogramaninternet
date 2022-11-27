@@ -41,6 +41,32 @@ date_default_timezone_set("Asia/Jakarta");
                     <th colspan="2">Action</th>
                 </tr>    
             </thead>
+               <tbody>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+    <div>
+        <div class='row'>
+            <div class='col d-flex justify-content-center>
+            <a href=''class='btn btn-warning'> Update </a>
+        <div>
+        <div class ='col d-flex justify-content-center'>
+            <a href=''class='btn btn-sm btn-danger'> Delete </a>
             <tbody>
             <?php
             $server   = "localhost";
