@@ -14,12 +14,12 @@ date_default_timezone_set("Asia/Jakarta");
 "></script>
 </head>
 <body>
-    <div class="container m-3">
+    <div class="container m-5">
         <h2>Data Sekolah</h2>
         <a class="btn btn-primary" href="/uts/add.php" role="button">Tambah Sekolah</a>
         <br>
-        <table class="table table-striped table-hover">
-            <thead>
+        <table class="table table-striped table-hover mt-50">
+            <thead class="table-drak">
                 <tr class="text-center">
                     <th>NPSN</th>
                     <th>Status Sekolah</th>
@@ -35,34 +35,35 @@ date_default_timezone_set("Asia/Jakarta");
                     <th>Dusun</th>
                     <th>Desa</th>
                     <th>Kecamatan</th>
-                    <th>Kabupaten/Kota</th>
+                    <th>Kabupaten</th>
                     <th>Provinsi</th>
                     <th>Kode Pos</th>
                     <th colspan="2">Action</th>
                 </tr>    
             </thead>
-               <tbody>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+            </thead>
+    <tbody>
+    <td>69786287</td>
+    <td>Negeri</td>
+    <td>Smk</td>
+    <td>Smk negeri 10 merangin</td>
+    <td>1156/PD/2013</td>
+    <td>2013-10-16</td>
+    <td>1156/PD/2013</td>
+    <td>2013-10-16</td>
+    <td>jl.lintas Sumatra kab.merangin,kec.pamenang,jambi 37357</td>
+    <td>010</td>
+    <td>005</td>
+    <td>II</td>
+    <td>Sialang</td>
+    <td>Pamenang</td>
+    <td>Merangin</td>
+    <td>Jambi</td>
+    <td>37357</td>
     <td>
     <div>
         <div class='row'>
-            <div class='col d-flex justify-content-center>
+        <div class='col d-flex justify-content-center'>
             <a href=''class='btn btn-warning'> Update </a>
         <div>
         <div class ='col d-flex justify-content-center'>
@@ -84,15 +85,16 @@ date_default_timezone_set("Asia/Jakarta");
 
             //menampilkan data dari database
         
-            $sql    = "SELECT * FROM db_cucu";
+            $sql    = "SELECT * FROM tb_cucu";
             $result = $connect->query($sql);
 
             if(!$result){
                 die("Invalid Query: ". $connect->error);
             }
 
-            while($row = $result->fetch_assoc()){
+            while($data = $result->fetch_assoc()){
                 echo"
+                <tbody>
                 <tr>
                     <td>$row[npsn]</td>
                     <td>$row[status]</td> 
@@ -111,8 +113,10 @@ date_default_timezone_set("Asia/Jakarta");
                     <td>$row[kabupaten]</td>
                     <td>$row[provinsi]</td>
                     <td>$row[kode_pos]</td>
-                
+                    <tr>
                     <td>
+                    </tr>
+                    <//tbody>
                     <button type='button'class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='@mdo'>Edit</button>
                     <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                         <div class='modal-dialog modal-xl'>
